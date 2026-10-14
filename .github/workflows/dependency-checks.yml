@@ -41,6 +41,7 @@ jobs:
           cp .env.example .env
           php artisan key:generate
           php artisan package:discover
+          php artisan statamic:install --no-interaction
       - run: npm ci --ignore-scripts --no-audit
       - name: Dependency audit (blocks critical findings)
         run: npm audit --audit-level=critical
