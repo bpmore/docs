@@ -1,40 +1,32 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "patch-package && mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "production": "patch-package && mix --production",
-        "prod": "mix --production"
+        "dev": "vite",
+        "development": "vite",
+        "watch": "vite",
+        "hot": "vite --host=127.0.0.1",
+        "build": "vite build",
+        "production": "vite build",
+        "prod": "vite build",
+        "test:static": "node --test tests/static-assets.test.mjs"
     },
     "devDependencies": {
-        "autoprefixer": "^10.3.2",
-        "axios": "^0.28",
-        "browser-sync": "^3.0.3",
-        "browser-sync-webpack-plugin": "^2.4.0",
-        "cross-env": "^7.0",
-        "laravel-mix": "^6.0",
-        "lodash": "^4.17.19",
-        "postcss": "^8.4.31",
-        "postcss-import": "^12.0.1",
-        "postcss-nested": "^4.1.2",
-        "postcss-preset-env": "^6.7.0",
-        "resolve-url-loader": "^3.0",
-        "tailwindcss": "^2.2.7",
-        "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.12",
-        "patch-package": "^8.0.1"
+        "autoprefixer": "^10.4.21",
+        "laravel-vite-plugin": "^3.2.0",
+        "postcss": "^8.5.6",
+        "postcss-import": "^16.1.1",
+        "postcss-nested": "^7.0.2",
+        "postcss-preset-env": "^11.6.1",
+        "tailwindcss": "^2.2.19",
+        "vite": "^8.3.4"
     },
     "dependencies": {
         "@docsearch/js": "^3.0.0-alpha.40",
         "alpinejs": "^3.2.4",
-        "dayjs": "^1.10.7"
+        "dayjs": "^1.10.7",
+        "@docsearch/css": "3.0.0-alpha.40"
     },
-    "overrides": {
-        "babel-loader": "^8.4.1",
-        "css": "^2.2.4",
-        "webpackbar": "^7.0.0"
+    "engines": {
+        "node": ">=22.12.0"
     }
 }

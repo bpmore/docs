@@ -17,11 +17,32 @@ If you want to work on this project on your local machine, you may follow the in
 5. Run the following commands:
   ```
   composer install
-  npm install
-  npm run dev
+  nvm use
+  npm ci --ignore-scripts
   cp .env.example .env
   php artisan key:generate
+  npm run dev
   ```
+
+Use PHP 8.4 and Node 22.23.3 (`.nvmrc`). Vite 8 and Laravel Vite Plugin 3
+replace Laravel Mix; run `npm run build` (or `npm run production`) for deployment.
+Publish `public/build/` with its manifest. Templates use the Statamic `vite` tag;
+the previous Mix manifest, Webpack patch and BrowserSync proxy are removed.
+For local development, serve Laravel separately, then run `npm run dev` without
+`CI=true`. Vite reloads template/content edits. The old `watch-poll` command is
+removed; use `server.watch.usePolling` in `vite.config.mjs` if needed.
+
+Stop the Vite development server before generating a deployable static export;
+otherwise its active hot file makes templates reference development assets.
+Run `php vendor/bin/phpunit`, then `php artisan statamic:ssg:generate` and
+`npm run test:static`. The static export copies the Vite build directory, and the
+asset checks verify that generated pages reference files present in that export.
+
+Tailwind 2 and the existing theme remain in this migration. Its eight build-tool
+audit findings (five high, three moderate) require a separate Tailwind upgrade
+with custom CSS and visual regression checks. Runtime npm and Composer audits
+are clean. External search results, Torchlight authorization and hosting still
+require their intended service configuration.
 
 ## Providing Feedback
 

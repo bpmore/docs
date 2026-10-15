@@ -11,6 +11,8 @@ class DocumentationRenderingTest extends TestCase
         $this->get('/antlers')
             ->assertOk()
             ->assertSee('Antlers')
+            ->assertSee('type="module"', false)
+            ->assertSee('/build/assets/', false)
             ->assertSee('class="toc"', false);
     }
 

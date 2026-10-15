@@ -47,3 +47,7 @@ jobs:
         run: npm audit --audit-level=critical
       - run: npm run production
       - run: php vendor/bin/phpunit
+      - name: Generate static documentation
+        run: php artisan statamic:ssg:generate --no-interaction
+      - name: Verify exported Vite assets
+        run: npm run test:static
