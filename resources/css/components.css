@@ -32,7 +32,7 @@
         }
 
         code:not(.torchlight) {
-            @apply text-purple !important;
+            @apply text-purple!;
         }
     }
 
@@ -68,7 +68,7 @@
         }
 
         code:not(.torchlight) {
-            @apply text-purple !important;
+            @apply text-purple!;
         }
 
         a { @apply text-black font-bold; }
@@ -139,7 +139,7 @@ figure figcaption {
 /* -------------------------------------------------- */
 
 .button {
-    @apply py-1 px-5 relative inline-block bg-yellow font-normal rounded border shadow-md font-display text-base whitespace-nowrap transition no-underline text-black !important;
+    @apply py-1! px-5! relative! inline-block! bg-yellow! font-normal! rounded! border! shadow-md! font-display! text-base! whitespace-nowrap! transition! no-underline! text-black!;
 
     &:hover {
         box-shadow: none !important;
@@ -147,11 +147,11 @@ figure figcaption {
     }
 
     &.button-small {
-        @apply text-sm bg-white px-3 !important;
+        @apply text-sm! bg-white! px-3!;
     }
 
     &:focus {
-        @apply outline-none shadow-outline;
+        @apply outline-hidden shadow-outline;
     }
 }
 
@@ -181,7 +181,7 @@ figure figcaption {
         counter-reset: item;
         /* list-style-type: lower-alpha; */
 
-        li { @apply text-base; }
+        li { @apply text-base leading-normal; }
         li:before {
              content: counters(item, ".") " ";
         }
@@ -207,7 +207,7 @@ figure figcaption {
 }
 
 .badge {
-    @apply text-white bg-black text-xs inline-block py-1 px-2 font-mono rounded-sm shadow-stack-sm mb-4;
+    @apply text-white bg-black text-xs inline-block py-1 px-2 font-mono rounded-xs shadow-stack-sm mb-4;
 }
 
 dl {

@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.typekit.net/huy6nsb.css" defer>
-    <link rel="stylesheet" href="{{ mix src='/css/tailwind.css' }}">
+    {{ vite src="resources/css/tailwind.css" }}
 </head>
 {{# 1280x640 #}}
 <body class="font-sans leading-normal markdown flex flex-col">
-    <div class="h-4 bg-gradient-to-r from-purple to-blue via-pink"></div>
+    <div class="h-4 bg-linear-to-r from-purple to-blue via-pink"></div>
     <div class="flex-1 pl-12 pr-8 pt-2 flex flex-col justify-center relative z-10">
         {{ svg src="docs-logo" class="block text-pink w-[300px] h-[46px]" }}
 

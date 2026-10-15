@@ -3,7 +3,7 @@
     <div class="max-w-2xl text-xl">{{ intro | widont }}</div>
 </header>
 
-<div class="bg-gradient-to-br from-gray-lightest to-mint mt-8 md:mt-12 p-4 md:py-5 md:px-8 border shadow-stack dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
+<div class="bg-linear-to-br from-gray-lightest to-mint mt-8 md:mt-12 p-4 md:py-5 md:px-8 border shadow-stack dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
     <div class="flex flex-col md:flex-row items-center">
         <div class="flex-1">
             <h2 class="font-display text-3xl font-semibold mb-2">Get Started</h2>
@@ -33,26 +33,26 @@
 </div>
 
 <div class="grid md:grid-cols-3 gap-y-6 md:gap-6 mt-6">
-    {{# <a href="/screencasts" class="bg-white border shadow-stack-sm text-center hover:shadow-stack-yellow-sm rounded-sm p-5 hover:bg-gradient-to-tl from-gray-lightest">
+    {{# <a href="/screencasts" class="bg-white border shadow-stack-sm text-center hover:shadow-stack-yellow-sm rounded-xs p-5 hover:bg-linear-to-tl from-gray-lightest">
         <img src="/img/tv.svg" alt="Retro TV Set" class="h-16 mb-4 mx-auto">
             <h2 class="text-2xl mb-2 font-bold font-display">Screencasts</h2>
         <p class="text-sm font-mono-alt">Tips, tricks, and tutorials on how to build with Statamic.</p>
     </a> #}}
-    <a href="/screencasts" class="bg-white border shadow-stack-sm hover:shadow-stack-yellow-sm rounded-sm p-5 hover:bg-gradient-to-tl from-gray-lightest dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
+    <a href="/screencasts" class="bg-white border shadow-stack-sm hover:shadow-stack-yellow-sm rounded-xs p-5 hover:bg-linear-to-tl from-gray-lightest dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
         <header class="flex items-center mb-3">
             <img src="/img/tv.svg" alt="Retro TV Set" class="relative top-[-2px] transform rotate-[-7deg] -left-1">
             <h2 class="text-2xl ml-2 font-bold font-display">Watch + Learn</h2>
         </header>
         <p class="text-sm font-mono-alt">Tips, tricks, and tutorials on how to build with Statamic.</p>
     </a>
-    <a href="/upgrade-guide" class="bg-white border shadow-stack-sm hover:shadow-stack-yellow-sm rounded-sm p-5 hover:bg-gradient-to-tl from-gray-lightest dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
+    <a href="/upgrade-guide" class="bg-white border shadow-stack-sm hover:shadow-stack-yellow-sm rounded-xs p-5 hover:bg-linear-to-tl from-gray-lightest dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
         <header class="flex items-center mb-3">
             <img src="/img/car.svg" alt="An older car that needs to be upgraded" class="relative top-[-2px] transform rotate-[-7deg] -left-1">
             <h2 class="text-2xl font-bold font-display">Upgrade Guides</h2>
         </header>
         <p class="text-sm font-mono-alt">For when it's time to get that older Statamic site onto v3.</p>
     </a>
-    <a href="https://statamic.com/discord" class="bg-white border shadow-stack-sm hover:shadow-stack-yellow-sm rounded-sm p-5 hover:bg-gradient-to-tl from-gray-lightest dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
+    <a href="https://statamic.com/discord" class="bg-white border shadow-stack-sm hover:shadow-stack-yellow-sm rounded-xs p-5 hover:bg-linear-to-tl from-gray-lightest dark:bg-none dark:bg-gray-darkest dark:text-white dark:shadow-none">
         <header class="flex items-center mb-3" x-data="{active: 1}" x-init="setInterval(() => { if (active === 9) { active = 0; }; active++ }, 1500)">
             <img :style="{ 'display': active === 1 ? 'block' : 'none' }" src="/img/people/person-1.svg" alt="A person representing the community">
             <img :style="{ 'display': active === 2 ? 'block' : 'none' }" src="/img/people/person-2.svg" alt="A person representing the community">

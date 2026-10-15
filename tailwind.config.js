@@ -1,15 +1,6 @@
-const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    content: [
-      './resources/**/*.antlers.html',
-      './resources/**/*.blade.php',
-      './content/**/*.md'
-    ]
-  },
   darkMode: 'class',
   important: true,
   theme: {
@@ -103,12 +94,6 @@ module.exports = {
         mono: ['Menlo', 'monospace'],
         'mono-alt': ['code-saver', 'monospace'],
       },
-      fontSize: {
-        '3xl': ['2rem', 1],
-        '7xl': ['4.25rem', 1],
-        '8xl': ['5rem', 1],
-        '9xl': ['6rem', 1],
-      },
       height: {
         'screen-sans-nav': 'calc(100vh - 100px)',
       },
@@ -122,7 +107,6 @@ module.exports = {
       }
     },
   },
-  variants: {},
   plugins: [
     plugin(function({ addUtilities }) {
       const newUtilities = {

@@ -284,7 +284,7 @@ ul.list-col {
     }
 }
 
-@media screen(lg) {
+@media (width >= 64rem) {
     ul.list-col {
         column-count: 3;
     }

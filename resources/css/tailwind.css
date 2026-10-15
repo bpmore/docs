@@ -1,13 +1,36 @@
-@import "tailwindcss/base";
+@import 'tailwindcss' source(none) important;
 
-/* @import "code"; */
-@import "carbonads";
-@import "content";
-@import "components";
-@import "layout";
-@import "search";
-@import "torchlight";
-@import "utilities";
+@import './carbonads.css';
+@import './content.css';
+@import './components.css';
+@import './layout.css';
+@import './search.css';
+@import './torchlight.css';
+@import './utilities.css';
 
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* Keep the custom palette, shadows and list-column plugin in one config. */
+@config '../../tailwind.config.js';
+@source '../views';
+@source '../../content';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --text-3xl: 2rem;
+    --text-3xl--line-height: 1;
+    --text-7xl: 4.25rem;
+    --text-7xl--line-height: 1;
+    --text-8xl: 5rem;
+    --text-8xl--line-height: 1;
+    --text-9xl: 6rem;
+    --text-9xl--line-height: 1;
+}
+
+@layer base {
+    *, ::before, ::after, ::backdrop, ::file-selector-button {
+        border-color: #191A1B;
+    }
+
+    button:not(:disabled), [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+}

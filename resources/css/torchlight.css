@@ -13,6 +13,8 @@ pre {
     @apply text-purple rounded;
     padding: 1px 2px;
     font-size: 15px;
+    /* Keep inline code on its parent's line box when its font size differs. */
+    line-height: 1lh;
     background-color: #E7ECF1;
     word-break: break-word;
 }
