@@ -41,6 +41,6 @@ body {
 }
 
 .dark .side-nav li.active a {
-    @apply text-yellow !important;
+    @apply text-yellow!;
     &:before { display: none; }
 }

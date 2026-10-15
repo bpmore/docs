@@ -28,7 +28,7 @@
     }
 }
 
-@screen md {
+@media (width >= 48rem) {
     #carbonads {
         @apply block;
         max-width: 130px;

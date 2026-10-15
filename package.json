@@ -8,23 +8,21 @@
         "build": "vite build",
         "production": "vite build",
         "prod": "vite build",
-        "test:static": "node --test tests/static-assets.test.mjs"
+        "test:static": "node --test tests/static-assets.test.mjs",
+        "test:browser": "node --test tests/browser-styles.test.mjs"
     },
     "devDependencies": {
-        "autoprefixer": "^10.4.21",
+        "@tailwindcss/vite": "^4.3.3",
         "laravel-vite-plugin": "^3.2.0",
-        "postcss": "^8.5.6",
-        "postcss-import": "^16.1.1",
-        "postcss-nested": "^7.0.2",
-        "postcss-preset-env": "^11.6.1",
-        "tailwindcss": "^2.2.19",
+        "puppeteer": "^25.14.0",
+        "tailwindcss": "^4.3.3",
         "vite": "^8.3.4"
     },
     "dependencies": {
+        "@docsearch/css": "3.0.0-alpha.40",
         "@docsearch/js": "^3.0.0-alpha.40",
         "alpinejs": "^3.2.4",
-        "dayjs": "^1.10.7",
-        "@docsearch/css": "3.0.0-alpha.40"
+        "dayjs": "^1.10.7"
     },
     "engines": {
         "node": ">=22.12.0"

@@ -13,7 +13,7 @@ jobs:
     timeout-minutes: 20
     env:
       APP_ENV: testing
-      APP_URL: http://localhost
+      APP_URL: http://127.0.0.1:4313
       STATAMIC_PRO_ENABLED: 'true'
       DB_CONNECTION: sqlite
       DB_DATABASE: ':memory:'
@@ -43,10 +43,26 @@ jobs:
           php artisan package:discover
           php artisan statamic:install --no-interaction
       - run: npm ci --ignore-scripts --no-audit
-      - name: Dependency audit (blocks critical findings)
-        run: npm audit --audit-level=critical
+      - name: Dependency audit
+        run: npm audit
       - run: npm run production
       - run: php vendor/bin/phpunit
+      - name: Serve production assets for browser regression checks
+        run: |
+          php artisan serve --host=127.0.0.1 --port=4313 > storage/logs/browser-test-server.log 2>&1 &
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4313/build/manifest.json > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat storage/logs/browser-test-server.log
+          exit 1
+      - name: Check custom styles in Chrome
+        run: npm run test:browser
+        env:
+          RUN_BROWSER_TESTS: '1'
+          BROWSERSHOT_CHROME_PATH: /usr/bin/google-chrome
       - name: Generate static documentation
         run: php artisan statamic:ssg:generate --no-interaction
       - name: Verify exported Vite assets
